@@ -1,0 +1,70 @@
+<div ng-controller='quizCtrl as quiz'>
+			<div class='row'>
+				<a class='btn btn-primary btn-home' href='#/list'>
+					<span class='glyphicon glyphicon-home pull-right'> </span>
+				</a>
+			</div>
+        		
+       	 	<div class='row'>
+       	 		<div class='col-xs-8'>
+       	 			<h2>Progress:</h2>
+       	 			<div class='btn-toolbar'>
+       	 				<button class='btn' ng-repeat='question in quiz.dataService.quizQuestions' ng-class="{'btn-warning': question.selected == null, 'btn-info': question.selected != null}" ng-click='quiz.showQuestion($index)'>
+       	 					<span class='glyphicon' ng-class='{"glyphicon-question-sign": question.selected == null, "glyphicon-pencil": question.selected != null}'></span>
+       	 				</button>
+       	 			</div>
+       	 		</div>
+       	 		<div class='col-xs-4'>
+       	 			<h4>Legend:</h4>
+       	 			<div class='row'>
+       	 				<div class='col-sm-4'>
+       	 					<button class='btn btn-info'>
+       	 						<span class='glyphicon glyphicon-pencil'></span>
+       	 					</button>
+       	 					<span>Answered</span>
+       	 				</div>
+       	 				<div class='col-sm-4'>
+       	 					<button class='btn btn-warning'>
+       	 						<span class='glyphicon glyphicon-question-sign'></span>
+       	 					</button>
+       	 					<span>UnAnswered</span>
+       	 				</div>
+       	 			</div>
+       	 		</div>
+       	 	</div>
+       	 	<div class='row'>
+       	 		<div ng-show='quiz.error' class="alert alert-danger alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <strong>Warning!</strong> You haven't finished all the quiz!
+				</div>
+       	 			<h3 class='title'>Questions:</h3>
+       	 			<div class='well well-sm' ng-show='quiz.showResultDialog()'>
+       	 				<h4>Are you sure you want to submit your answers?</h4>
+       	 				<a class='btn btn-success' ng-click='quiz.showResult()' href='#/result'>Yes</a>
+       	 				<button class='btn btn-danger'>No</button>
+       	 			</div>
+       	 			<div class='well well-sm clearfix' ng-hide='quiz.showResultDialog()'>
+	       	 				<div class='row'>
+	       	 					<div class='col-sm-12'>
+		       	 					<h4>{{quiz.quizMetrics.currentQuestionIndex+1}}. {{quiz.quizMetrics.currentQuestion.text}}</h4>
+		       	 					<div class='row'>
+		       	 							<div class='col-sm-6' 
+		       	 								ng-repeat='answerObj in quiz.quizMetrics.currentQuestion.possibilities' 
+		       	 								ng-click='quiz.setAnswer($index)'>
+		       	 								<h4 ng-if='quiz.quizMetrics.currentQuestion.type == "text"'
+		       	 									class='answer' 
+		       	 									ng-class='{"selected":quiz.quizMetrics.currentQuestion.selected == ($index)}'>{{answerObj.answer}}</h4>					
+		       	 								<div ng-if='quiz.quizMetrics.currentQuestion.type == "image"'
+		       	 								     class='image-answer' 
+		       	 								     ng-class='{"image-selected":quiz.quizMetrics.currentQuestion.selected == ($index)}' >
+		       	 									<img ng-src='{{answerObj.answer}}' class=''>
+		       	 								</div>
+		       	 							</div>
+		       	 					</div>
+		       	 				</div>
+	       	 				</div>
+	       	 				<button class='btn btn-warning' ng-click='quiz.nextQuiz(quiz.quizMetrics.currentQuestionIndex)'>Continue</button>
+       	 			</div>
+       	 		</div>
+        </div><!--end of quizCtrl-->
+    		

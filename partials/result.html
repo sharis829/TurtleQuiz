@@ -1,0 +1,66 @@
+<div ng-controller='resultCtrl as result'>
+			<div class='row'>
+				<a class='btn btn-primary btn-home' href='#/list'>
+					<span class='glyphicon glyphicon-home pull-right'></span>
+				</a>
+			</div>
+        		<div class='row'>
+        			<div class='col-xs-8'>
+        				<h2>Results:</h2>
+        				<div class='btn-toolbar'>
+        					<button class='btn' 
+        						ng-repeat='question in result.dataService.quizQuestions'
+        						ng-class='{"btn-success":question.correct ,"btn-danger":!question.correct}'
+        						ng-click='result.getCurrentAnswer($index)'>
+        						<span class='glyphicon' ng-class='{"glyphicon-remove":!question.correct ,"glyphicon-ok":question.correct}'></span>
+        					</button>
+        				</div>
+        			</div>
+        			<div class='col-xs-4'>
+        				<h4>Legend</h4>
+        				<div class="row">
+        					<div class="col-sm-4">
+        						<button class='btn btn-success'>
+        							<span class='glyphicon glyphicon-ok'></span>
+        						</button>
+        						<p>Correct</p>
+        					</div>
+        					<div class="col-sm-4">
+        						<button class='btn btn-danger'>
+        							<span class='glyphicon glyphicon-remove'></span>
+        						</button>
+        						<p>Correct</p>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        		<div class='row'>
+        			<h2>You scored {{result.quizMetrics.correctNumber}} / {{result.dataService.quizQuestions.length}}<br>
+        				{{result.getScorePercentage() | number: 2}}%
+        			</h2>
+        			<h3>	Questions:</h3>
+        			<div class='well well-sm'>
+        				<h4>{{result.quizMetrics.currentQuestionIndex+1}}. {{result.quizMetrics.currentQuestion.text}}</h4>
+        				<div class='row'>
+        					<div class='col-sm-6' ng-repeat='answerObj in result.quizMetrics.currentQuestion.possibilities'>
+        						<h4 ng-if='result.quizMetrics.currentQuestion.type == "text"' 
+        							class='answer' 
+        							ng-class='result.getAnswerClass($index)'>
+        							{{answerObj.answer}}
+        							<span class='label pull-right' ng-show='result.quizMetrics.currentQuestion.selected != result.quizMetrics.currentQuestion.correctAnswer && result.quizMetrics.currentQuestion.selected == $index'>Your answer</span>
+        							<span class='label pull-right' ng-show='result.quizMetrics.currentQuestion.correctAnswer == $index'>Correct answer</span>
+        						</h4>
+        						
+        						<h4 ng-if='result.quizMetrics.currentQuestion.type == "image"'
+        							class='image-answer' 
+        							ng-class='result.getImageAnswerClass($index)'>
+        							<img ng-src='{{answerObj.answer}}'>
+        						</h4>
+        						
+        					</div>
+        				</div>
+        			</div>
+        			<button class='btn btn-primary' ng-click='result.goHome()'>Go Back to Facts</button>
+        		</div>
+       	 </div><!--end of resultCtrl-->
+    

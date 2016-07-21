@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="74.935px" height="69.042px" viewBox="0 0 74.935 69.042" enable-background="new 0 0 74.935 69.042" xml:space="preserve">
+<g>
+	<radialGradient id="SVGID_1_" cx="49.7822" cy="24.373" r="26.1209" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#B2D235"/>
+		<stop  offset="1" style="stop-color:#789E2D"/>
+	</radialGradient>
+	<path fill="url(#SVGID_1_)" d="M47.074,18.569c-7.097,0-13.372,3.519-17.177,8.907c6.369,1.694,11.064,7.497,11.064,14.399
+		c0,5.759-3.269,10.751-8.05,13.231c3.735,3.41,8.707,5.49,14.163,5.49c11.606,0,21.013-9.408,21.013-21.014
+		C68.087,27.978,58.68,18.569,47.074,18.569z"/>
+	<radialGradient id="SVGID_2_" cx="50.4292" cy="8.6846" r="12.3313" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#B2D235"/>
+		<stop  offset="1" style="stop-color:#789E2D"/>
+	</radialGradient>
+	<path fill="url(#SVGID_2_)" d="M47.457,16.277c0,0,1.527-11.845,16.428-8.788C61.975,12.838,53.952,16.659,47.457,16.277z"/>
+	
+		<radialGradient id="SVGID_3_" cx="2840.3711" cy="-2865.5869" r="7.7436" gradientTransform="matrix(0.7597 0.65 -0.6503 0.7592 -4009.9539 350.1522)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#EC1C24"/>
+		<stop  offset="1" style="stop-color:#B81319"/>
+	</radialGradient>
+	<path fill="url(#SVGID_3_)" d="M6.848,23.246c0,0,5.565-5.021,11.426,2.517C15.178,27.532,9.79,26.079,6.848,23.246z"/>
+	<radialGradient id="SVGID_4_" cx="25.042" cy="30.6768" r="23.9759" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#EC1C24"/>
+		<stop  offset="1" style="stop-color:#B81319"/>
+	</radialGradient>
+	<path fill="url(#SVGID_4_)" d="M30.184,27.476c0,0-10.573,13.712,3.014,27.631c-11.363,5.765-23.818-4.8-21.706-15.364
+		C13.605,29.178,23.187,25.552,30.184,27.476z"/>
+</g>
+</svg>

@@ -1,0 +1,110 @@
+---
+---
+
+@import 'bootstrap';
+@import 'fontawesome/font-awesome';
+
+/*list ctrl*/
+.well-item{
+    height: auto;
+}
+
+.well-image{
+    height: auto;
+    width: 100%;
+}
+
+.btn-quiz{
+    margin: 10px;
+}
+
+.btn-home{
+    margin-left: 10px   
+}
+
+.top-buffer{margin-top:30px}
+
+
+/*question answer possibilities*/
+.answer{
+    padding: 15px 20px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+}
+
+.answer:hover{
+    cursor:pointer
+}
+
+/* default image answer possibilities*/
+.image-answer{
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    height: auto;
+    margin-bottom: 20px;
+    
+}
+
+.image-answer img{
+    width: 100%;
+    height: 100%
+}
+
+/* seleted answer */
+.selected{
+    background-color: lightyellow;
+}
+
+/* seleted image answer */
+.image-selected{
+    border:4px solid lightyellow;
+}
+
+.origin-selected{
+    background-color: lightpink;
+}
+
+.image-origin-selected{
+    border: 4px solid lightpink;
+}
+
+/* the correct answer */
+.correct{
+    background-color: lightgreen;
+}
+
+.correct-image-selected{
+    border:4px solid lightgreen;
+}
+
+.label{
+    font-weight: normal;
+    float: right
+}
+
+/* toolbar buttons */
+.btn-toolbar .btn{
+    margin-bottom: 5px
+}
+
+
+/*sm*/
+@media only screen and (min-width:768px ) {  
+    .well-item{
+        height: 250px;
+    }
+    
+    .well-image{
+        height: 220px;
+    }
+    
+    .btn-quiz{
+        margin:0
+    }
+    
+    .image-answer{
+        height: 250px;
+    }
+    
+}
